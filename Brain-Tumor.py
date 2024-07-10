@@ -65,12 +65,9 @@ elif(app_mode=="About"):
 else:
     st.header("Brain Tumor Detection")
     test_image = st.file_uploader("Choose An Image")
-    
-    if (st.button("Show Image")):
-        st.image(test_image, use_column_width=True)
         
-    if (st.button("Predict")):
-        st.write("Prediction")
+    if (st.button("Predict Tumor In MRI Scan")):
+        st.write("Prediction In Progress ⭕")
         result_index = model_prediction(test_image)
         class_name = ['Glioma', 'Meningioma', 'Normal', 'Pituitary']
         st.success("Model is Predicting it's a {}".format(class_name[result_index]))
